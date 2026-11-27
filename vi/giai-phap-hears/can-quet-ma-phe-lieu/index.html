@@ -28,6 +28,7 @@
 <link rel="preload" href="../../../assets/fonts/be-vietnam-pro-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../../assets/fonts/be-vietnam-pro-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../../assets/build/site.9ffb0c3da4.css">
+<link rel="stylesheet" href="../../../assets/css/search.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"HearS","legalName":"CÔNG TY TNHH HEARS","taxID":"0316326230","email":"HearSVietnam@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Số 7, Đường số 8, Phường Tăng Nhơn Phú, TP Hồ Chí Minh","addressCountry":"VN"},"location":[{"@type":"Place","name":"Trụ sở","address":{"@type":"PostalAddress","streetAddress":"Số 7, Đường số 8, Phường Tăng Nhơn Phú, TP Hồ Chí Minh","addressCountry":"VN"}},{"@type":"Place","name":"Chi nhánh Đắk Lắk - Công ty TNHH HearS","address":{"@type":"PostalAddress","streetAddress":"Thôn 18, xã Ea Riêng, tỉnh Đắk Lắk","addressCountry":"VN"}},{"@type":"Place","name":"Đầu cầu chiến lược Đà Nẵng","address":{"@type":"PostalAddress","addressLocality":"Đà Nẵng","addressCountry":"VN"}}],"contactPoint":{"@type":"ContactPoint","email":"HearSVietnam@gmail.com","contactType":"sales","availableLanguage":["en","vi","zh","ja"]}},{"@type":"WebSite","name":"HearS","inLanguage":"vi"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Trang chủ","item":"https://hears.vn/vi/"},{"@type":"ListItem","position":2,"name":"Giải pháp HearS","item":"https://hears.vn/vi/giai-phap-hears/"},{"@type":"ListItem","position":3,"name":"Cân quét mã & phế liệu","item":"https://hears.vn/vi/giai-phap-hears/can-quet-ma-phe-lieu/"}]}]}</script>
 </head>
 <body class="theme-hears">
@@ -41,6 +42,13 @@
   </div>
   <div class="container header-row">
     <a class="logo" href="../../../vi/" aria-label="HearS"><img src="../../../assets/img/brand/hears-logo.svg" alt="HearS" width="74" height="32"></a>
+    
+    <form class="site-search" role="search" action="../../tim-kiem/" method="get" data-index="../../../assets/search-index.json" data-lang="vi">
+      <label class="visually-hidden" for="site-search-input">Tìm kiếm</label>
+      <input id="site-search-input" class="site-search__input" type="search" name="q" placeholder="Tìm kiếm…" autocomplete="off" aria-label="Tìm kiếm…">
+      <button class="site-search__btn" type="submit" aria-label="Tìm kiếm"><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+      <ul class="site-search__results" hidden></ul>
+    </form>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Điều hướng chính">
       <ul>
@@ -155,5 +163,6 @@
 
 <div class="mobile-bar"><a class="btn btn--primary" href="../../../vi/yeu-cau-bao-gia/">Yêu cầu báo giá</a><a class="btn btn--secondary" href="mailto:HearSVietnam@gmail.com">Email</a></div>
 <script type="module" src="../../../assets/js/main.js"></script>
+<script type="module" src="../../../assets/js/search.js"></script>
 </body>
 </html>

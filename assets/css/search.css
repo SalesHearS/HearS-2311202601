@@ -1,0 +1,47 @@
+/* HearS site search: header search box + live results + search results page.
+   Colours only through var(--...) from tokens.css, same as components.css. */
+
+/* ---------- Header search box ---------- */
+.site-search { position: relative; flex: 0 1 220px; min-width: 160px; margin-left: auto; }
+.site-search__input { width: 100%; min-height: var(--tap); padding: var(--space-2) 40px var(--space-2) var(--space-3); border: 1.5px solid var(--control); border-radius: var(--radius); background: var(--white); color: var(--navy-800); font-size: .9375rem; }
+.site-search__input:focus { outline: var(--focus-ring); outline-offset: 1px; border-color: var(--field-border-focus); }
+.site-search__input::placeholder { color: var(--slate-600); }
+.site-search__btn { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 36px; height: 36px; padding: 0; background: none; border: 0; border-radius: var(--radius); color: var(--navy-800); cursor: pointer; }
+.site-search__btn:hover { color: var(--hears-red); }
+.site-search__btn .icon { width: 20px; height: 20px; }
+
+/* ---------- Live results dropdown ---------- */
+.site-search__results { position: absolute; top: calc(100% + 8px); left: 0; z-index: 120; width: 100%; min-width: 340px; max-height: min(60vh, 480px); overflow-y: auto; margin: 0; padding: 0; list-style: none; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-menu); }
+.site-search__results[hidden] { display: none; }
+.site-search__result a { display: block; padding: var(--space-3) var(--space-4); border-top: 1px solid var(--line); color: var(--navy-800); text-decoration: none; }
+.site-search__result:first-child a { border-top: 0; }
+.site-search__result a:hover, .site-search__result a:focus-visible, .site-search__result--active a { background: var(--grey-50); }
+.site-search__result a:focus-visible { outline: var(--focus-ring); outline-offset: -3px; }
+.site-search__title { display: block; font-weight: 700; line-height: 1.35; }
+.site-search__snippet { display: block; margin-top: 2px; font-size: .875rem; line-height: 1.45; color: var(--slate-600); }
+.site-search__lang { display: inline-block; margin-top: 4px; font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--slate-600); }
+.site-search__result mark, .search-page__result mark { background: var(--hears-red-50); color: var(--navy-800); padding: 0 1px; border-radius: 2px; }
+.site-search__empty, .site-search__hint { padding: var(--space-3) var(--space-4); font-size: .9375rem; color: var(--slate-600); }
+.site-search__more a { font-weight: 700; color: var(--hears-red); }
+
+/* ---------- Search results page ---------- */
+.search-page__form { display: flex; flex-wrap: wrap; gap: var(--space-3); max-width: 640px; margin-bottom: var(--space-5); }
+.search-page__form .site-search__input { flex: 1 1 320px; }
+.search-page__count { margin: 0 0 var(--space-5); color: var(--slate-600); }
+.search-page__list { list-style: none; margin: 0; padding: 0; }
+.search-page__result { border-top: 1px solid var(--line); padding-block: var(--space-4); }
+.search-page__result h2 { font-size: var(--fs-h4); margin-bottom: var(--space-1); }
+.search-page__result h2 a { color: var(--navy-800); text-decoration: none; }
+.search-page__result h2 a:hover { color: var(--hears-red); }
+.search-page__result p { margin: 0; color: var(--slate-600); }
+.search-page__url { font-size: .8125rem; color: var(--slate-600); overflow-wrap: anywhere; }
+
+@media (min-width: 1141px) and (max-width: 1280px) {
+  .site-search { flex-basis: 160px; min-width: 140px; }
+}
+@media (max-width: 1140px) {
+  /* The mobile header is 64px tall and the nav is a dropdown, so the
+     results panel is fixed to the viewport just below the header. */
+  .site-search { flex: 1 1 auto; min-width: 0; }
+  .site-search__results { position: fixed; left: var(--gutter); right: var(--gutter); top: 72px; width: auto; min-width: 0; max-height: calc(100vh - 96px); }
+}
